@@ -16,12 +16,6 @@ public class Example {
   public static final String APP_SECRET = "[Your app secret]";
 
   public static final APIContext context = new APIContext(ACCESS_TOKEN, APP_SECRET);
-//   public Example(ArrayList<ArrayList<String>> data) {
-//         ArrayList<String> args = new ArrayList<String>;
-//         for (int i = 0; i < data.size(); i++) {
-//             args.add(data.get(i)[0]);
-//         }
-//     }
 
 public Example (ArrayList<ArrayList<String>> data) {
     try {
