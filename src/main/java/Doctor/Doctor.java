@@ -464,11 +464,11 @@ public class Doctor extends User
             data.add(meta);
             
             System.out.println(data);
+            final Example example = new Example(data);
             return data;
 	}
-        
-        
-	public ArrayList<ArrayList<ArrayList<String>>> getPatientInfo(String searchType, String searchWord)
+
+    public ArrayList<ArrayList<ArrayList<String>>> getPatientInfo(String searchType, String searchWord)
 	{
 		//////////////////////////////////// Getting data from database //////////////////////////////////////////////////////////////
 		ArrayList<ArrayList<String>> personalData = null;
