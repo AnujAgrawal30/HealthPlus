@@ -7,4 +7,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: curl -o- https://raw.githubusercontent.com/Privado-Inc/privado-cli/main/install.sh | bash
-      - run: ~/.privado/bin/privado scan .
+      - run: ~/.privado/bin/privado scan . --overwrite
