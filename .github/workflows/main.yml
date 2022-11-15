@@ -1,0 +1,10 @@
+name: privado-scan
+run-name: Privado privacy scan is running...
+on: [push, pull_request]
+jobs:
+  install_privado:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl -o- https://raw.githubusercontent.com/Privado-Inc/privado-cli/main/install.sh | bash
+      - run: privado scan .
+    
