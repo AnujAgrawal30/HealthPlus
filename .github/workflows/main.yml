@@ -6,6 +6,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: docker-practice/actions-setup-docker@1.0.11
-      - run: curl -o- https://raw.githubusercontent.com/Privado-Inc/privado-cli/main/install.sh | bash
-      - run: ~/.privado/bin/privado scan . --overwrite --skip-upload
+      - name: Setup Docker
+        uses: docker-practice/actions-setup-docker@1.0.11
+      - name: Install Privado
+        run: curl -o- https://raw.githubusercontent.com/Privado-Inc/privado-cli/main/install.sh | bash
+      - name: Scan repository
+        run: ~/.privado/bin/privado scan . --overwrite --skip-upload
+      - name: Update results
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -a -m "Updated privado.json"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
