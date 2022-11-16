@@ -4,7 +4,6 @@ on: [push, pull_request]
 jobs:
   install_privado:
     runs-on: ubuntu-latest
-    container: public.ecr.aws/privado/privado:latest
     steps:
       - uses: actions/checkout@v3
       - uses: docker-practice/actions-setup-docker@1.0.11
